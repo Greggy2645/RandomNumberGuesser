@@ -1,4 +1,5 @@
 from random import randint
+import time
 begin = input('aight we gonna play a guess the number game. \n If you guesss the number right\n then you get a balloon. \nType start to begin.\n')
 
 def start():
@@ -11,8 +12,11 @@ def chosenNumber():
 	a = randint(0, chosenNumber)
 	guess = int(input('guess the random number here:\n'))
 	if a == guess:
-		print('you did it! A was:' + a )
+		print('you did it!')
+		start()
 	else: 
-		print('helaas pindakaas.\n Jij dacht: ' + str(guess) + 'maar het was: ' + str(a))
-
+		print('helaas pindakaas.\n You thought: ' + str(guess) + '\nbut it was: ' + str(a))
+		time.sleep(0)
+		print('you dumb fuck')
+		exit()
 start()
